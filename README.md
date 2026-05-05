@@ -4,7 +4,7 @@ This project runs a Playwright-based automation script against a Sinhala transla
 
 ## What It Does
 
-- Reads test inputs from `Assignment 1 - Test cases.xlsx`
+- Reads test inputs from the workbook in this folder, `IT23228030_Assignment 1 - Test cases.xlsx`
 - Detects the input, expected output, actual output, and status columns automatically when possible
 - Opens the configured frontend URL in Chromium
 - Sends each Singlish input to the UI
@@ -21,7 +21,7 @@ This project runs a Playwright-based automation script against a Sinhala transla
 Install the Python dependencies:
 
 ```bash
-pip install -r requirements.txt
+pip install -r IT23228030_requirements.txt
 ```
 
 Install the Playwright browser binaries:
@@ -35,29 +35,34 @@ playwright install chromium
 Run the script from this folder:
 
 ```bash
-python test_automation.py
+python IT23228030_test_automation.py
 ```
 
 Common options:
 
 - `--excel PATH` to use a different Excel file
 - `--sheet NAME` to choose a workbook sheet
+- `--header-row N` to force the header row
+- `--max-header-scan-rows N` to limit header detection
 - `--url URL` to change the frontend address
 - `--headless` to run without opening a visible browser window
 - `--output PATH` to save results to a different file
+- `--save-every N` to save after every N rows
+- `--wait-ms N`, `--retries N`, and `--retry-wait-ms N` to tune response waiting
+- `--type-delay-ms N`, `--timeout-ms N`, and `--slow-mo-ms N` to tune browser timing
 - `--keep-open` to leave the browser open after the run finishes
 
 Example:
 
 ```bash
-python test_automation.py --headless --url https://www.pixelssuite.com/chat-translator
+python IT23228030_test_automation.py --headless --url https://www.pixelssuite.com/chat-translator
 ```
 
 ## Default Input File
 
 The script looks for this workbook by default:
 
-- `Assignment 1 - Test cases.xlsx`
+- `IT23228030_Assignment 1 - Test cases.xlsx`
 
 If the workbook does not use the expected column names, you can override them with:
 
